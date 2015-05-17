@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,33 +7,33 @@ using cis480_project.Models;
 
 namespace cis480_project.Controllers
 {
-    public class CourseController : Controller
+    public class CampusController : Controller
     {
         private CampusDbContext db = new CampusDbContext();
 
-        // GET: Course
-        public ActionResult Index() {
-            return View(model: db.Courses.ToList());
+        // GET: Campus
+        public ActionResult Index()
+        {
+            return View(model: db.Campuses.ToList());
         }
 
-        // GET: Course/Details/id
-        public ActionResult Details(int id)
-        {
-            //404 error if user types in url with course that doesnt exist
-            Course course = db.Courses.Find(id);
-            if (course == null) {
+        // GET: Campus/Details/5
+        public ActionResult Details(int id) {
+            //display 404 error if no campus with id exists
+            Campus selectedCampus = db.Campuses.Find(id);
+            if (selectedCampus == null) {
                 return new HttpNotFoundResult();
             }
-            return View(model: course);
+            return View(selectedCampus);
         }
 
-        // GET: Course/Create
+        // GET: Campus/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Course/Create
+        // POST: Campus/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -50,18 +49,18 @@ namespace cis480_project.Controllers
             }
         }
 
-        // GET: Course/Edit/5
+        // GET: Campus/Edit/5
         public ActionResult Edit(int id)
         {
-            //404 error if user types in url with course that doesnt exist
-            Course course = db.Courses.Find(id);
-            if (course == null) {
+            //display 404 error if no campus with id exists
+            Campus selectedCampus = db.Campuses.Find(id);
+            if (selectedCampus == null) {
                 return new HttpNotFoundResult();
             }
-            return View(model: course);
+            return View(selectedCampus);
         }
 
-        // POST: Course/Edit/5
+        // POST: Campus/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -77,18 +76,18 @@ namespace cis480_project.Controllers
             }
         }
 
-        // GET: Course/Delete/5
+        // GET: Campus/Delete/5
         public ActionResult Delete(int id)
         {
-            //404 error if user types in url with course that doesnt exist
-            Course course = db.Courses.Find(id);
-            if (course == null) {
+            //display 404 error if no campus with id exists
+            Campus selectedCampus = db.Campuses.Find(id);
+            if (selectedCampus == null) {
                 return new HttpNotFoundResult();
             }
-            return View(model: course);
+            return View(selectedCampus);
         }
 
-        // POST: Course/Delete/5
+        // POST: Campus/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
