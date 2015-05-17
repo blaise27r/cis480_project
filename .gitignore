@@ -204,3 +204,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# ignore migrations folder as this should be created when it is needed by developer manually
+cis480_project/Migrations/
