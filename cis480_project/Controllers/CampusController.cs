@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using cis480_project.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace cis480_project.Controllers
 {
@@ -40,8 +42,15 @@ namespace cis480_project.Controllers
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                //create a campus with name from form
+                //add it to db
+                Campus campus = new Campus {Name = collection["Name"]};
+                db.Campuses.Add(campus);
+                db.SaveChanges();
+                //create an alert for user feedback
+                ViewBag.Alerts = new List<string>{String.Format("{0} campus has been created", campus.Name)};
+                //go to campus/index
+                return View("Index", model: db.Campuses);
             }
             catch
             {
@@ -67,8 +76,14 @@ namespace cis480_project.Controllers
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                //get the campus from db
+                Campus campus = db.Campuses.Find(id);
+                //edit the campus
+                campus.Name = collection["Name"];
+                db.SaveChanges();
+                //create alert for user feedback
+                ViewBag.Alerts = new List<string>{String.Format("{0} campus has been edited", campus.Name)};
+                return View("Index", model: db.Campuses);
             }
             catch
             {
@@ -94,8 +109,13 @@ namespace cis480_project.Controllers
             try
             {
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                //find and delete the campus
+                Campus campus = db.Campuses.Find(id);
+                db.Campuses.Remove(campus);
+                db.SaveChanges();
+                //create alert for user feedback
+                ViewBag.Alerts = new List<string>{String.Format("{0} campus has been deleted", campus.Name)};
+                return View("Index", model: db.Campuses);
             }
             catch
             {

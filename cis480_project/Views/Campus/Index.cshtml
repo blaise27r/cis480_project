@@ -2,6 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
+    //display the contents of Alerts
+    try {
+        foreach (var alert in ViewBag.Alerts) {
+            <script> window.alert("@alert"); </script>
+        }
+    }
+    catch {}
 }
 
 <h2>Index</h2>
