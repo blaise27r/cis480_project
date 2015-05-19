@@ -16,5 +16,9 @@ namespace cis480_project.Models {
         public string Name { get; set; }
         public string Designator { get; set; }
 
+        public int CampusId { get; set; }
+        [ForeignKey("CampusId")]
+        public Campus Campus { get; set; }
+
     }
 }
