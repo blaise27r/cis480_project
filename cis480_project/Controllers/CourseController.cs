@@ -12,9 +12,16 @@ namespace cis480_project.Controllers
     {
         private CampusDbContext db = new CampusDbContext();
 
-        // GET: Course
-        public ActionResult Index() {
-            return View(model: db.Courses.ToList());
+        // GET: /Course/Index/campusId
+        //courses at campus
+        public ActionResult Index(int? id = null) {
+            if (id == null) {
+                return View(model: db.Courses.ToList());
+            }
+            else {
+                ViewBag.Campus = db.Campuses.Find(id);
+                return View(model: db.Courses.Where(Course => Course.CampusId == id));
+            }
         }
 
         // GET: Course/Details/id

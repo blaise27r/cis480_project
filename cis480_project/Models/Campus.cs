@@ -10,7 +10,7 @@ namespace cis480_project.Models {
         public string Name { get; set; }
 
         //check entity documentation
-        public virtual List<Course> Courses { get; set; }
+//        public virtual List<Course> Courses { get; set; }
     }
 
 }

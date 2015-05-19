@@ -19,6 +19,7 @@ namespace cis480_project.Controllers
             return View(model: db.Campuses.ToList());
         }
 
+
         // GET: Campus/Details/5
         public ActionResult Details(int id) {
             //display 404 error if no campus with id exists
@@ -29,11 +30,13 @@ namespace cis480_project.Controllers
             return View(selectedCampus);
         }
 
+
         // GET: Campus/Create
         public ActionResult Create()
         {
             return View();
         }
+
 
         // POST: Campus/Create
         [HttpPost]
@@ -58,6 +61,7 @@ namespace cis480_project.Controllers
             }
         }
 
+
         // GET: Campus/Edit/5
         public ActionResult Edit(int id)
         {
@@ -68,6 +72,7 @@ namespace cis480_project.Controllers
             }
             return View(selectedCampus);
         }
+
 
         // POST: Campus/Edit/5
         [HttpPost]
@@ -91,6 +96,7 @@ namespace cis480_project.Controllers
             }
         }
 
+
         // GET: Campus/Delete/5
         public ActionResult Delete(int id)
         {
@@ -101,6 +107,7 @@ namespace cis480_project.Controllers
             }
             return View(selectedCampus);
         }
+
 
         // POST: Campus/Delete/5
         [HttpPost]
@@ -122,5 +129,6 @@ namespace cis480_project.Controllers
                 return View();
             }
         }
+
     }
 }
