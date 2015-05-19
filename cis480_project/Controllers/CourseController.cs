@@ -12,8 +12,12 @@ namespace cis480_project.Controllers
     {
         private CampusDbContext db = new CampusDbContext();
 
-        // GET: /Course/Index/campusId
-        //courses at campus
+        // GET: /Course/Index/campusId - courses at campus 
+        // GET: /Course/Index - all courses
+        // GET: /Course/ - all courses
+        //This is a hack to overload the Index method since .NET does not allow controller actions (methods) to be overloaded
+        //What group of idiots made this framework?
+        //courses at campus with parameter; all courses withou parameter
         public ActionResult Index(int? id = null) {
             if (id == null) {
                 return View(model: db.Courses.ToList());
