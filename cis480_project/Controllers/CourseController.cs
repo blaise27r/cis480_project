@@ -36,12 +36,15 @@ namespace cis480_project.Controllers
             if (course == null) {
                 return new HttpNotFoundResult();
             }
+            //set the campus for the course object so it can be displayed in the view
+            Campus campus = db.Campuses.Find(course.CampusId);
+            course.Campus = campus;
             return View(model: course);
         }
 
         // GET: Course/Create
-        public ActionResult Create()
-        {
+        public ActionResult Create() {
+            ViewBag.Campuses = db.Campuses.ToList();
             return View();
         }
 
@@ -49,10 +52,17 @@ namespace cis480_project.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
+            System.Diagnostics.Debug.WriteLine(collection.ToString());
             try
             {
                 // TODO: Add insert logic here
-
+                Course course = new Course {
+                    Name = collection["Name"],
+                    Designator = collection["Designator"],
+                    CampusId = Int32.Parse(collection["CampusId"])
+                };
+                db.Courses.Add(course);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -69,6 +79,7 @@ namespace cis480_project.Controllers
             if (course == null) {
                 return new HttpNotFoundResult();
             }
+            ViewBag.Campuses = db.Campuses.ToList();
             return View(model: course);
         }
 
@@ -79,7 +90,11 @@ namespace cis480_project.Controllers
             try
             {
                 // TODO: Add update logic here
-
+                Course course = db.Courses.Find(id);
+                if (course.Name != collection["Name"]) course.Name = collection["Name"];
+                if (course.Designator != collection["Designator"]) course.Designator = collection["Designator"];
+                if (course.CampusId != Int32.Parse(collection["CampusId"])) course.CampusId = Int32.Parse(collection["CampusId"]);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -106,7 +121,9 @@ namespace cis480_project.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                Course course = db.Courses.Find(id);
+                db.Courses.Remove(course);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

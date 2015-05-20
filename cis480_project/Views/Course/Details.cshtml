@@ -26,9 +26,16 @@
             @Html.DisplayFor(model => model.Designator)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus.Name)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
