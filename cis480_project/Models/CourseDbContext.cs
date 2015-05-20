@@ -5,16 +5,15 @@ using System.Linq;
 using System.Web;
 
 namespace cis480_project.Models {
-    public class CampusDbContext : DbContext {
+    public class CourseDbContext : DbContext {
 
         //not sure if i need this yet
-        //public CampusDbContext() : base("CampusDbContext") {
+        //public CourseDbContext() : base("CourseDbContext") {
             
         //}
 
-        public CampusDbContext() : base() { }
+        public CourseDbContext() : base() { }
 
-        public DbSet<Campus> Campuses { get; set; }
         public DbSet<Course> Courses { get; set; }
     }
 }

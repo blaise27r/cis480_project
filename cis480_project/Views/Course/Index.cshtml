@@ -4,14 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-@{
-    if (ViewBag.Campus != null) {
-        <h2>@ViewBag.Campus.Name</h2>
-    }
-    else {
-        <h2>All Campuses</h2>
-    }
-}
+
+<h2>All Campuses</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

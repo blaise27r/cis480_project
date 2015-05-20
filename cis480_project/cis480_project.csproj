@@ -210,20 +210,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505181941514_Initial.cs" />
-    <Compile Include="Migrations\201505181941514_Initial.Designer.cs">
-      <DependentUpon>201505181941514_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201505201904181_Initial.cs" />
+    <Compile Include="Migrations\201505201904181_Initial.Designer.cs">
+      <DependentUpon>201505201904181_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Campus.cs" />
-    <Compile Include="Models\CampusDbContext.cs" />
+    <Compile Include="Models\CourseDbContext.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -358,11 +356,6 @@
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
-    <Content Include="Views\Campus\Index.cshtml" />
-    <Content Include="Views\Campus\Details.cshtml" />
-    <Content Include="Views\Campus\Create.cshtml" />
-    <Content Include="Views\Campus\Edit.cshtml" />
-    <Content Include="Views\Campus\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,8 +365,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505181941514_Initial.resx">
-      <DependentUpon>201505181941514_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505201904181_Initial.resx">
+      <DependentUpon>201505201904181_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

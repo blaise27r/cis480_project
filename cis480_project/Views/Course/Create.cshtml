@@ -1,18 +1,6 @@
 ﻿@using cis480_project.Models
 @model cis480_project.Models.Course
 
-@{
-    ViewBag.Title = "Create";
-
-    //create a list for campus select element
-    List<SelectListItem> campusSelectListItems = new List<SelectListItem>();
-    foreach (Campus campus in ViewBag.Campuses) {
-        campusSelectListItems.Add( new SelectListItem {
-            Text = campus.Name,
-            Value = campus.Id.ToString()
-        });
-    }
-}
 
 <h2>Create</h2>
 
@@ -37,14 +25,6 @@
             @Html.LabelFor(model => model.Designator, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Designator, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Designator, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Campus", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(mmodel => Model.CampusId, campusSelectListItems, htmlAttributes: new { @class = "form-control"})
                 @Html.ValidationMessageFor(model => model.Designator, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -10,7 +10,7 @@ namespace cis480_project.Controllers
 {
     public class CourseController : Controller
     {
-        private CampusDbContext db = new CampusDbContext();
+        private CourseDbContext db = new CourseDbContext();
 
         // GET: /Course/Index/campusId - courses at campus 
         // GET: /Course/Index - all courses
@@ -18,14 +18,8 @@ namespace cis480_project.Controllers
         //This is a hack to overload the Index method since .NET does not allow controller actions (methods) to be overloaded
         //What group of idiots made this framework?
         //courses at campus with parameter; all courses withou parameter
-        public ActionResult Index(int? id = null) {
-            if (id == null) {
-                return View(model: db.Courses.ToList());
-            }
-            else {
-                ViewBag.Campus = db.Campuses.Find(id);
-                return View(model: db.Courses.Where(Course => Course.CampusId == id));
-            }
+        public ActionResult Index() {
+            return View(model: db.Courses.ToList());
         }
 
         // GET: Course/Details/id
@@ -37,14 +31,11 @@ namespace cis480_project.Controllers
                 return new HttpNotFoundResult();
             }
             //set the campus for the course object so it can be displayed in the view
-            Campus campus = db.Campuses.Find(course.CampusId);
-            course.Campus = campus;
             return View(model: course);
         }
 
         // GET: Course/Create
         public ActionResult Create() {
-            ViewBag.Campuses = db.Campuses.ToList();
             return View();
         }
 
@@ -59,7 +50,6 @@ namespace cis480_project.Controllers
                 Course course = new Course {
                     Name = collection["Name"],
                     Designator = collection["Designator"],
-                    CampusId = Int32.Parse(collection["CampusId"])
                 };
                 db.Courses.Add(course);
                 db.SaveChanges();
@@ -79,7 +69,6 @@ namespace cis480_project.Controllers
             if (course == null) {
                 return new HttpNotFoundResult();
             }
-            ViewBag.Campuses = db.Campuses.ToList();
             return View(model: course);
         }
 
@@ -93,7 +82,6 @@ namespace cis480_project.Controllers
                 Course course = db.Courses.Find(id);
                 if (course.Name != collection["Name"]) course.Name = collection["Name"];
                 if (course.Designator != collection["Designator"]) course.Designator = collection["Designator"];
-                if (course.CampusId != Int32.Parse(collection["CampusId"])) course.CampusId = Int32.Parse(collection["CampusId"]);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
