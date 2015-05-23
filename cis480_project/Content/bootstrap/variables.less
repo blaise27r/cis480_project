@@ -1,6 +1,7 @@
 //
 // Variables
 // --------------------------------------------------
+ 
 
 
 //== Colors
@@ -352,18 +353,19 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    65px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-color:             #1460AB;
+@navbar-default-bg:                #1460AB;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@font-family:                      'Montserrat', sans-serif;
 
-// Navbar links
+// Navbar linksI
 @navbar-default-link-color:                #777;
 @navbar-default-link-hover-color:          #333;
 @navbar-default-link-hover-bg:             transparent;
@@ -780,15 +782,15 @@
 //== Breadcrumbs
 //
 //##
-
+@breadcrumb_height:             -30px;
 @breadcrumb-padding-vertical:   8px;
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-@breadcrumb-bg:                 #f5f5f5;
+@breadcrumb-bg:                 #4D8DC2;
 //** Breadcrumb text color
-@breadcrumb-color:              #ccc;
+@breadcrumb-color:              #fff;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
+@breadcrumb-active-color:       #fff;
 //** Textual separator for between breadcrumb elements
 @breadcrumb-separator:          "/";
 

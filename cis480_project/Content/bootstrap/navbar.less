@@ -389,10 +389,36 @@
 
 
 // Alternate navbars
+
+
+.navbar-default {
+    background-color: @navbar-default-bg;
+    height: 65px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+    font-weight: 600;
+    height: 65px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #1460AB;
+    background-color: #4D8DC2;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:active,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color: #4D8DC2;
+}
+
 // --------------------------------------------------
 
 // Default navbar
-.navbar-default {
+/*.navbar-default {
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
 
@@ -411,7 +437,7 @@
 
   .navbar-nav {
     > li > a {
-      color: @navbar-default-link-color;
+      color: #FFFFFF;
 
       &:hover,
       &:focus {
@@ -522,7 +548,7 @@
       }
     }
   }
-}
+}*/
 
 // Inverse navbar
 
