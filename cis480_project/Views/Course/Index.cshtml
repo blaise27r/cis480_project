@@ -1,9 +1,13 @@
-﻿@model IEnumerable<cis480_project.Models.Course>
+﻿@using NET_MVC5_Bootstrap3_3_1_LESS.Controllers
+@model IEnumerable<cis480_project.Models.Course>
 
 @{
     ViewBag.Title = "Index";
 }
 
+<ol class="breadcrumb">
+    <li>Courses</li>
+</ol>
 
 <h2>Courses</h2>
 
@@ -32,7 +36,8 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }) |
+            @Html.ActionLink("Objectives", "Index", "Objective", new {courseId = item.Id}, null)
         </td>
     </tr>
 }

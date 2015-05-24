@@ -4,6 +4,12 @@
     ViewBag.Title = "Delete";
 }
 
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index")</li>
+    <li>@Html.ActionLink(@Model.Name, "Details", new { id = Model.Id})</li>
+    <li>Delete</li>
+</ol>
+
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>

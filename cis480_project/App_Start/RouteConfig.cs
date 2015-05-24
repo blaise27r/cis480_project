@@ -6,11 +6,12 @@ namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS {
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "Courses",
-            //    url: "campus/{campusId}/course/{id}",
-            //    defaults: new { controller = "Course", action = "Index", id = UrlParameter.Optional}
-            //);
+            
+            routes.MapRoute(
+                name: "Objectives",
+                url: "Course/{courseId}/Objective/{action}/{objectiveId}",
+                defaults: new { controller = "Objective", action="Index", objectiveId = UrlParameter.Optional}
+            );
 
             routes.MapRoute(
                 name: "Default",

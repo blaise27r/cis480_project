@@ -1,0 +1,48 @@
+﻿@model cis480_project.Models.Objective
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+    <li>@Html.ActionLink((string) Model.Course.Name, "Details", "Course", new {id = Model.Course.Id}, null)</li>
+    <li>@Html.ActionLink("Objectives", "Index", new {courseId = Model.Course.Id})</li>
+    <li>Objective PK - @Html.ActionLink(Model.Id.ToString(), "Details", new {courseId = Model.CourseId, objectiveId = Model.Id})</li>
+    <li>Delete</li>
+</ol>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Objective</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

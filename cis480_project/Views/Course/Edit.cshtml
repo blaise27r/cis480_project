@@ -2,6 +2,12 @@
 @model cis480_project.Models.Course
 
 
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index")</li>
+    <li>@Html.ActionLink(@Model.Name, "Details", new { id = Model.Id})</li>
+    <li>Edit</li>
+</ol>
+
 <h2>Edit</h2>
 
 

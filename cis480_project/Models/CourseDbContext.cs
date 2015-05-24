@@ -15,5 +15,6 @@ namespace cis480_project.Models {
         public CourseDbContext() : base() { }
 
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Objective> Objectives { get; set; }
     }
 }

@@ -4,6 +4,12 @@
     ViewBag.Title = "Details";
 }
 
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index")</li>
+    <li>@Html.ActionLink(@Model.Name, "Details", new { id = Model.Id})</li>
+    <li>Details</li>
+</ol>
+
 <h2>Details</h2>
 
 <div>

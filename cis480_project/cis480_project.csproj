@@ -212,18 +212,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505211351027_Initial.cs" />
-    <Compile Include="Migrations\201505211351027_Initial.Designer.cs">
-      <DependentUpon>201505211351027_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201505211949591_Initial.cs" />
+    <Compile Include="Migrations\201505211949591_Initial.Designer.cs">
+      <DependentUpon>201505211949591_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CourseDbContext.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Objective.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -356,6 +358,11 @@
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Objective\Create.cshtml" />
+    <Content Include="Views\Objective\Delete.cshtml" />
+    <Content Include="Views\Objective\Details.cshtml" />
+    <Content Include="Views\Objective\Edit.cshtml" />
+    <Content Include="Views\Objective\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,8 +372,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505211351027_Initial.resx">
-      <DependentUpon>201505211351027_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505211949591_Initial.resx">
+      <DependentUpon>201505211949591_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
