@@ -1,0 +1,50 @@
+﻿@model cis480_project.Models.EnablingObjective
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+    <li>@Html.ActionLink((string) ViewBag.Course.Name, "Details", "Course", new { id = ViewBag.Course.Id}, null)</li>
+    <li>@Html.ActionLink("Objectives", "Index", "Objective", new {courseId = ViewBag.Course.Id}, null)</li>
+    <li>Objective PK - @Html.ActionLink((string)ViewBag.Objective.Id.ToString(), "Details", "Objective", new { courseId = ViewBag.Course.Id, objectiveId = ViewBag.Objective.Id }, null)</li>
+    <li>@Html.ActionLink("Enabling Objectives", "Index")</li>
+    <li>Enabling Objective PK - @Html.ActionLink((string)Model.Id.ToString(), "Details", new { courseId = ViewBag.Course.Id, objectiveId = ViewBag.Objective.Id, enablingObjectiveId = Model.Id } )</li>
+    <li>Delete</li>
+</ol>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EnablingObjective</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Objective
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objective.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

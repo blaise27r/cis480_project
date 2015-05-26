@@ -19,7 +19,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Course.Name)
+            Course Name
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -38,7 +38,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new {courseId = item.CourseId, objectiveId = item.Id}) |
                 @Html.ActionLink("Details", "Details", new {courseId = item.CourseId, objectiveId = item.Id}) |
-                @Html.ActionLink("Delete", "Delete", new {courseId = item.CourseId, objectiveId = item.Id})
+                @Html.ActionLink("Delete", "Delete", new {courseId = item.CourseId, objectiveId = item.Id}) |
+                @Html.ActionLink("Enabling Objectives", "Index", "EnablingObjective", new { courseId = item.CourseId, objectiveId = item.Id}, null)
             </td>
         </tr>
     }

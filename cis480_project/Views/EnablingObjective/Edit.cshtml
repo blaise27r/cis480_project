@@ -1,0 +1,61 @@
+﻿@model cis480_project.Models.EnablingObjective
+
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+    <li>@Html.ActionLink((string) ViewBag.Course.Name, "Details", "Course", new { id = ViewBag.Course.Id}, null)</li>
+    <li>@Html.ActionLink("Objectives", "Index", "Objective", new {courseId = ViewBag.Course.Id}, null)</li>
+    <li>Objective PK - @Html.ActionLink((string)ViewBag.Objective.Id.ToString(), "Details", "Objective", new { courseId = ViewBag.Course.Id, objectiveId = ViewBag.Objective.Id }, null)</li>
+    <li>@Html.ActionLink("Enabling Objectives", "Index")</li>
+    <li>Enabling Objective PK - @Html.ActionLink((string)Model.Id.ToString(), "Details", new { courseId = ViewBag.Course.Id, objectiveId = ViewBag.Objective.Id, enablingObjectiveId = Model.Id } )</li>
+    <li>Edit</li>
+</ol>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>EnablingObjective</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ObjectiveId, "ObjectiveId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ObjectiveId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ObjectiveId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

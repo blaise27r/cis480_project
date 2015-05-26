@@ -47,9 +47,8 @@
       <HintPath>..\packages\BundleTransformer.Core.1.9.52\lib\net40\BundleTransformer.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BundleTransformer.Less, Version=1.9.54.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
-      <HintPath>..\packages\BundleTransformer.Less.1.9.54\lib\net40\BundleTransformer.Less.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="BundleTransformer.Less">
+      <HintPath>..\packages\BundleTransformer.Less.1.9.64\lib\net40\BundleTransformer.Less.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -211,19 +210,21 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\EnablingObjectiveController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505211949591_Initial.cs" />
-    <Compile Include="Migrations\201505211949591_Initial.Designer.cs">
-      <DependentUpon>201505211949591_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201505261856376_Initial.cs" />
+    <Compile Include="Migrations\201505261856376_Initial.Designer.cs">
+      <DependentUpon>201505261856376_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CourseDbContext.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\EnablingObjective.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Objective.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -363,6 +364,11 @@
     <Content Include="Views\Objective\Details.cshtml" />
     <Content Include="Views\Objective\Edit.cshtml" />
     <Content Include="Views\Objective\Index.cshtml" />
+    <Content Include="Views\EnablingObjective\Create.cshtml" />
+    <Content Include="Views\EnablingObjective\Delete.cshtml" />
+    <Content Include="Views\EnablingObjective\Details.cshtml" />
+    <Content Include="Views\EnablingObjective\Edit.cshtml" />
+    <Content Include="Views\EnablingObjective\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,8 +378,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505211949591_Initial.resx">
-      <DependentUpon>201505211949591_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505261856376_Initial.resx">
+      <DependentUpon>201505261856376_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
