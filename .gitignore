@@ -206,4 +206,4 @@ FakesAssemblies/
 *.opt
 
 # ignore migrations folder as this should be created when it is needed by developer manually
-cis480_project/Migrations/
+cis480_project/Migrations/*
