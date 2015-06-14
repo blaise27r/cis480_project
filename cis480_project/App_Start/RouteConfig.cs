@@ -1,10 +1,17 @@
-﻿using System.Web.Mvc;
+﻿using System.Security.Policy;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace ASP.NET_MVC5_Bootstrap3_3_1_LESS {
     public class RouteConfig {
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name:   "Assignment",
+                url: "Assignment/{courseId}/{action}/{assignmentId}",
+                defaults: new { controller = "Assignment", action = "Index", assignmentId = UrlParameter.Optional}
+            );
 
             routes.MapRoute(
                 name:   "Enabling Obectives",
