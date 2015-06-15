@@ -52,6 +52,14 @@ namespace cis480_project.Controllers
                     Designator = collection["Designator"],
                 };
                 db.Courses.Add(course);
+                //Add units 1 - 5 for the new course
+                for (int weekNumber = 1; weekNumber <= 5; weekNumber++) {
+                    Unit unit = new Unit {
+                        WeekNumber = weekNumber,
+                        CourseId = course.Id
+                    };
+                    db.Units.Add(unit);
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
