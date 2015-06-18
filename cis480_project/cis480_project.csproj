@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnablingObjectiveController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,6 +218,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\AssignmentEnablingObjective.cs" />
     <Compile Include="Models\CourseDbContext.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\EnablingObjective.cs" />
@@ -365,6 +368,11 @@
     <Content Include="Views\EnablingObjective\Details.cshtml" />
     <Content Include="Views\EnablingObjective\Edit.cshtml" />
     <Content Include="Views\EnablingObjective\Index.cshtml" />
+    <Content Include="Views\Assignment\Create.cshtml" />
+    <Content Include="Views\Assignment\Delete.cshtml" />
+    <Content Include="Views\Assignment\Details.cshtml" />
+    <Content Include="Views\Assignment\Edit.cshtml" />
+    <Content Include="Views\Assignment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
