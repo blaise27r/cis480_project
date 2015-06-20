@@ -1,4 +1,4 @@
 # CIS 480 Project
 
 Steven Fisher
-Dzmitry Dabravolsko
+Dzmitry Dabravolski
