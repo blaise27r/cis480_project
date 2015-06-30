@@ -3,7 +3,7 @@
 Steven Fisher  
 Dzmitry Dabravolski
 
-# Database Instance Entity Framework Workaround
+#### Database Instance Entity Framework Workaround
 
 Stop, Delete & Recreate the Instance
 >sqllocaldb p v11.0  
