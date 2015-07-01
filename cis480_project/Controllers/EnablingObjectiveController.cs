@@ -17,6 +17,11 @@ namespace cis480_project.Controllers
         // GET: EnablingObjective
         public ActionResult Index(int? courseId, int? objectiveId)
         {
+            if (courseId == null || objectiveId == null)
+            {
+                return HttpNotFound();
+            }
+
             var enablingObjectives = db.EnablingObjectives.Where(EnablingObjective => EnablingObjective.ObjectiveId == objectiveId);
             ViewBag.Objective = db.Objectives.First(Objective => Objective.Id == objectiveId);
             ViewBag.Course = db.Courses.First(Course => Course.Id == courseId);

@@ -4,7 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+    <li>@Html.ActionLink((string)ViewBag.CourseName, "Details", "Course", new { id = ViewBag.CourseId }, null)</li>
+    <li>Assignments</li>
+</ol>
+
+<h2>Assignments</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

@@ -18,7 +18,12 @@ namespace cis480_project.Controllers
         private CourseDbContext db = new CourseDbContext();
 
         // GET: Assignment
-        public ActionResult Index(int courseId) {
+        public ActionResult Index(int? courseId) {
+            if (courseId == null)
+            {
+                return HttpNotFound();
+            }
+
             var queryResults = (from a in db.Assignments
                 join aeo in db.AssignmentEnablingObjectives on a.Id equals aeo.AssignmentId
                 join eo in db.EnablingObjectives on aeo.EnablingObjectiveId equals eo.Id
@@ -33,6 +38,12 @@ namespace cis480_project.Controllers
             foreach (var assignment in queryResults) {
                 assignments.Add(assignment.a);
             }
+
+            Course course = db.Courses.Find(courseId);
+
+            ViewBag.CourseId = courseId;
+            ViewBag.CourseName = course.Name;
+
             return View(assignments);
         }
 
