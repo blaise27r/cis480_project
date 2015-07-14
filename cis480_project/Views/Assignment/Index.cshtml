@@ -6,7 +6,7 @@
 
 <ol class="breadcrumb">
     <li>@Html.ActionLink("Courses", "Index", "Course")</li>
-    <li>@Html.ActionLink((string)ViewBag.CourseName, "Details", "Course", new { id = ViewBag.CourseId }, null)</li>
+    <li>@Html.ActionLink((string)ViewBag.Course.Name, "Details", "Course", new { id = ViewBag.Course.Id }, null)</li>
     <li>Assignments</li>
 </ol>
 

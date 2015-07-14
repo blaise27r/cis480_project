@@ -35,14 +35,12 @@ namespace cis480_project.Controllers
                 }).Distinct();
 
             List<Assignment> assignments = new List<Assignment>();
-            foreach (var assignment in queryResults) {
+            foreach (var assignment in queryResults) 
+            {
                 assignments.Add(assignment.a);
             }
 
-            Course course = db.Courses.Find(courseId);
-
-            ViewBag.CourseId = courseId;
-            ViewBag.CourseName = course.Name;
+            ViewBag.Course = db.Courses.First(Course => Course.Id == courseId);
 
             return View(assignments);
         }
