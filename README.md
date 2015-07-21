@@ -1,7 +1,9 @@
 # CIS 480 Project
 
-Steven Fisher  
-Dzmitry Dabravolski
+Basil Robinson
+James Shelkey
+David Cowart
+
 
 #### Database Instance Entity Framework Workaround
 
