@@ -3,12 +3,12 @@
 Steven Fisher  
 Dzmitry Dabravolski
 
-#### Tools
+## Tools
 
 Visual Studio 2013  
 Github for Windows/Mac or Git Shell
 
-#### Changes
+## Changes
 
 **AssignmentController.cs**
 
@@ -34,7 +34,7 @@ Since courseId and objectiveId are both nullable arguments we added in a 404 err
 Changed the links text for the current objective in breadcrumbs.
 
 
-#### Entity Framework
+## Entity Framework
 
 A framework for accessing data easily in this instance is built on using a local database file. When the project is compiled you will see a .mdf file in the App_Data directory of the root project directory.
 
@@ -46,7 +46,7 @@ A known problem is that the V11.0 database instance will stay connected to your 
 
 These commands will stop the v11.0 instance then delete and recreate it. You will have to compile the project in order to generate the .mdf file again.
 
-#### Todo
+## Todo
 
 **Units**
 
