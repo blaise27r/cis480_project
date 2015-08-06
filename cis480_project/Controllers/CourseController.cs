@@ -17,7 +17,7 @@ namespace cis480_project.Controllers
         // GET: /Course/ - all courses
         //This is a hack to overload the Index method since .NET does not allow controller actions (methods) to be overloaded
         //What group of idiots made this framework? // 
-        //courses at campus with parameter; all courses withou parameter
+        //courses at campus with parameter; all courses without parameter
         public ActionResult Index() {
             return View(model: db.Courses.ToList());
         }

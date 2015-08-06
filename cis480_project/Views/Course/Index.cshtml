@@ -1,4 +1,4 @@
-﻿@using NET_MVC5_Bootstrap3_3_1_LESS.Controllers
+@using NET_MVC5_Bootstrap3_3_1_LESS.Controllers
 @model IEnumerable<cis480_project.Models.Course>
 
 @{
@@ -38,7 +38,8 @@
             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id }) |
             @Html.ActionLink("Objectives", "Index", "Objective", new {courseId = item.Id}, null) |
-            @Html.ActionLink("Assignments", "Index", "Assignment", new { courseId = item.Id }, null)
+            @Html.ActionLink("Assignments", "Index", "Assignment", new { courseId = item.Id }, null) |
+			@Html.ActionLink("Units", "Index", "Unit", new { courseId = item.Id }, null)
         </td>
     </tr>
 }
