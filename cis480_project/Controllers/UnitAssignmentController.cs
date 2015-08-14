@@ -61,5 +61,23 @@ namespace cis480_project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+		
+		public ActionResult Create([BindAttribute(Include = "Id, Description,Unit Assignment")] UnitAssignment unitAssignment);
+		{
+			if (ModelState.IsValid)
+			{
+				db.UnitAssignment.Add(untAssignment);
+				db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+			ViewBag.UnitId = new SelectList(db.UnitId,"Id", "Desciption", UnitAssignmentController.UnitId);
+			return ViewContext(unitAssignment);
+		}
+		//GET: UnitAssignment/Edit/5
+		public ActionResult Edit(int? courseId, int? unitId, int? unitAssignmentId)
+		{
+			if (courseId == null || unitId == null || unitAssignmentId)
+			{}
+		}
 	}
 }
