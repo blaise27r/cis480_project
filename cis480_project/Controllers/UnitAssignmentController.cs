@@ -70,14 +70,28 @@ namespace cis480_project.Controllers
 				db.SaveChanges();
 				return RedirectToAction("Index");
 			}
-			ViewBag.UnitId = new SelectList(db.UnitId,"Id", "Desciption", UnitAssignmentController.UnitId);
+			ViewBag.UnitId = new SelectList(db.UnitId, "Id", "Desciption", UnitAssignmentController.UnitId);
 			return ViewContext(unitAssignment);
 		}
 		//GET: UnitAssignment/Edit/5
 		public ActionResult Edit(int? courseId, int? unitId, int? unitAssignmentId)
 		{
-			if (courseId == null || unitId == null || unitAssignmentId)
-			{}
+			if (courseId == null || unitId == null || unitAssignmentId == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+		 	UnitAssignment unitAssignments = db.UnitAssignments.Find(unitAssignmentsId);
+			 if (unitAssignments == null)
+			 {
+				 return HttpNotFound();
+			 }
+			ViewBag.UnitId = new SelectList(db.Units, "Id", "Description", unitAssignments.UnitId);
+            ViewBag.Objective = db.Units.First(Unit => Unit.Id == unitId);
+            ViewBag.Course = db.Courses.First(Course => Course.Id == courseId);
+            return View(unitAssignments);
 		}
+		 // POST: UnitAssignments/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 	}
 }
