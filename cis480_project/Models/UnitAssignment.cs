@@ -12,8 +12,8 @@ namespace cis480_project.Models {
 
         public int WeekNumber { get; set; }
 
-        public Course Course { get; set; }
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
+        public Unit Unit { get; set; }
+        [ForeignKey("Unit")]
+        public int UnitId { get; set; }
     }
 }
