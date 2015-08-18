@@ -89,5 +89,53 @@ namespace cis480_project.Controllers
 		 // POST: UnitAssignments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Description,ObjectiveId")] EnablingObjective unitAssignment)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(unitAssignment).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.UnitId = new SelectList(db.Objectives, "Id", "Description", unitAssignment.ObjectiveId);
+            return View(unitAssignments);
+        }
+		 // GET: UnitAssignments/Delete/5
+        public ActionResult Delete(int? courseId, int? objectiveId, int? unitAssignmentsId)
+        {
+            if (courseId == null || objectiveId == null || enablingObjectiveId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EnablingObjective enablingObjective = db.UnitAssignments.Find(unitAssignmentsId);
+            if (enablingObjective == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Unit = db.Units.First(Unit => Unit.Id == unitId);
+            ViewBag.Course = db.Courses.First(Course => Course.Id == courseId);
+            return View(unitAssignment);
+			
+		// POST: UnitAssignments/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int? courseId, int? objectiveId, int? unitAssignmentId)
+        {
+            UnitAssignment unitAssignment = db.UnitAssignments.Find(unitAssignmentId);
+            db.UnitAssignments.Remove(unitAssignment);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+		  protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        
+        }
 	}
 }
