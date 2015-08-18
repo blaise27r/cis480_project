@@ -21,5 +21,7 @@ namespace cis480_project.Models {
         public DbSet<Unit> Units { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<AssignmentEnablingObjective> AssignmentEnablingObjectives { get; set; }
+        public DBSet<UnitAssignment> UnitAssignments { get; set; } 
+       
     }
 }

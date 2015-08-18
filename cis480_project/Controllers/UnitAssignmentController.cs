@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using cis480_project.Models;
 
 namespace cis480_project.Controllers
 {
-	public class UnitAssignmentController : Controller
+    public class UnitAssignmentController : Controller
 	{
 		private CourseDbContext db = new CourseDbContext();
 		
