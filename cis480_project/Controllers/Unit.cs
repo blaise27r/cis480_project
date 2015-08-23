@@ -12,7 +12,7 @@ namespace cis480_project.Controllers
 {
     public class UnitController : Controller
     {
-        private UnitContext db = new UnitContext();
+        private CourseDbContext db = new CourseDbContext();
 
         // GET: /Unit/
         public ActionResult Index()
