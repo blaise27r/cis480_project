@@ -1,0 +1,16 @@
+namespace cis480_project.Models {
+    public class UnitEnablingCourse {
+        //bridge entity for m:n relationship
+
+        [Key]
+        public int Id { get; set; }
+
+        public Unit Unit { get; set; }
+        [ForeignKey("Unit")]
+        public int UnitId { get; set; }
+
+        public Course Course { get; set; }
+        [ForeignKey("Course")]
+        public int CourseId { get; set; }
+    }
+}
