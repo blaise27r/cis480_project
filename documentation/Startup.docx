@@ -1,0 +1,32 @@
+Getting started:  CIS 480 Class Project
+The following will be required for this project:
+	Microsoft Windows 7 or above (or emulator) 
+	Visual Studio 13 or above (Ultimate or Community)
+	GitHub  Account
+Step 1: Get set up on GitHub
+	The project itself is stored on a GitHub repository. If you are unfamiliar with GitHub, you will need to open a browser and navigate to https://github.com.
+1.	If you do not have a github account perform the following:
+a)	Select Sign up (green button in upper right hand corner)
+b)	Enter a Username
+c)	Enter Email Address (Ex. Macjon5869@students.ecpi.edu)
+d)	Create your password following rules on page
+e)	Confirm password
+f)	Select Create an account
+g)	Select Free option 
+h)	Click Finish sign up button
+If you have a github account login as normal.
+2.	To add the repository for project files perform the following:
+a)	In upper search area enter the repository owner from previous group (Ex. Brobinson27r) and click search.
+b)	The program should find a user that matches the search (check Users in the left hand panel)
+c)	Click on the user name in the center panel. 
+d)	Select the cis480_project link in the center panel.
+e)	Select the Fork button in the upper right hand corner of the website.
+f)	Once you show the project under your account, select clone in desktop or download zip from right hand menu. 
+g)	Github may prompt you to download the GitHub app. We do recommend doing so as it will help manage changes.
+3.	Once the program is downloaded to your computer perform the following:
+a)	Unzip the file if you chose the Zip download option. If you chose the GitHub application object, there will be a GitHub folder in your documentation folder.
+b)	Open up the CIS480 Project folder. There will be a Visual Studio Solution program with the name cis480_project.
+c)	Double-click the project file to open up the CIS480 project in Visual Studio.
+4.	To run the program:
+a)	On the left hand window, you will see a .cs file named Startup.cs . Highlight this file and select the debug/run option on the toolbar that corresponds with the browser you wish to test with.
+5.	When running, the database file is created in the App_data folder within your parent folder. There will be a .mdf and .ldf file. 
