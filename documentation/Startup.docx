@@ -30,3 +30,10 @@ c)	Double-click the project file to open up the CIS480 project in Visual Studio.
 4.	To run the program:
 a)	On the left hand window, you will see a .cs file named Startup.cs . Highlight this file and select the debug/run option on the toolbar that corresponds with the browser you wish to test with.
 5.	When running, the database file is created in the App_data folder within your parent folder. There will be a .mdf and .ldf file. 
+
+
+Visual Studio Locations
+	You can download VS Ultimate from the Dreamspark link in ECPI. You can download VS Community from Microsoft. Both options are free as a student. When installing, ensure you select the SQL Server options.
+
+Other Resources:
+https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8#content
